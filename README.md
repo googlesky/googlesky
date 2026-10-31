@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://googlesky.github.io/googlesky/" aria-label="Open the interactive Three.js artwork">
+  <a href="https://hieulp.1devops.io/googlesky/" aria-label="Open the interactive Three.js artwork">
     <img src="assets/profile-header.gif" alt="Freedom Windss — DevOps, SRE and Security Researcher" width="100%">
   </a>
 </div>
