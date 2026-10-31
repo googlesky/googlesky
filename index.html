@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#060d0f">
+    <meta name="description" content="Freedom Windss — DevOps/SRE and security research. Resilient infrastructure, reproducible research, useful open source.">
+    <meta property="og:title" content="Freedom Windss — DevOps / SRE · Security Researcher">
+    <meta property="og:image" content="https://googlesky.github.io/googlesky/assets/profile-header.png">
+    <title>Freedom Windss — DevOps / SRE · Security Researcher</title>
+    <script>
+      if (new URLSearchParams(location.search).get('capture') === '1') {
+        document.documentElement.classList.add('capture');
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --void: #060d0f;
+        --ink: #0a1518;
+        --teal: #2fe0c0;
+        --blue: #5b8cef;
+        --coral: #ff7d5a;
+        --paper: #e2efec;
+        --muted: #91aaa7;
+        --line: rgba(153, 203, 194, 0.17);
+        --display: "Avenir Next", Avenir, "Century Gothic", "Trebuchet MS", sans-serif;
+        --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html, body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+        background: var(--void);
+      }
+
+      body {
+        min-height: 100vh;
+        min-height: 100svh;
+        overflow: hidden;
+        color: var(--paper);
+        font-family: var(--display);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a, button { -webkit-tap-highlight-color: transparent; }
+      a { color: inherit; }
+      button { font: inherit; }
+
+      .scene,
+      .fallback-art,
+      .vignette,
+      .grain {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .scene { z-index: 1; }
+      .scene canvas { display: block; width: 100%; height: 100%; }
+
+      .fallback-art {
+        z-index: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 72% 47%, rgba(47, 224, 192, 0.09), transparent 23%),
+          radial-gradient(circle at 80% 54%, rgba(91, 140, 239, 0.06), transparent 32%);
+        transition: opacity 300ms ease;
+      }
+
+      .webgl-ready .fallback-art { opacity: 0; }
+
+      .fallback-ribbon {
+        position: absolute;
+        left: 33%;
+        top: 50%;
+        width: 72%;
+        height: 33%;
+        border: 1px solid rgba(47, 224, 192, 0.13);
+        border-radius: 50%;
+        transform: translate(-10%, -50%) rotate(-11deg);
+      }
+
+      .fallback-ribbon:nth-child(2) {
+        top: 45%;
+        height: 46%;
+        border-color: rgba(91, 140, 239, 0.1);
+        transform: translate(-4%, -50%) rotate(8deg);
+      }
+
+      .fallback-ribbon:nth-child(3) {
+        top: 56%;
+        height: 23%;
+        opacity: 0.65;
+        transform: translate(-14%, -50%) rotate(-18deg);
+      }
+
+      .fallback-core {
+        position: absolute;
+        left: 69%;
+        top: 48%;
+        width: clamp(96px, 13vw, 176px);
+        aspect-ratio: 1;
+        border: 1px solid rgba(47, 224, 192, 0.28);
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      .fallback-core::before,
+      .fallback-core::after {
+        content: "";
+        position: absolute;
+        inset: 18%;
+        border: 1px solid rgba(91, 140, 239, 0.24);
+        transform: rotate(30deg);
+      }
+
+      .fallback-core::after {
+        inset: 36%;
+        border-color: rgba(255, 125, 90, 0.36);
+        transform: rotate(60deg);
+      }
+
+      .vignette {
+        z-index: 2;
+        background:
+          linear-gradient(90deg, rgba(6, 13, 15, 0.91) 0%, rgba(6, 13, 15, 0.58) 30%, transparent 64%),
+          linear-gradient(0deg, rgba(6, 13, 15, 0.68), transparent 22%, transparent 80%, rgba(6, 13, 15, 0.36));
+      }
+
+      .grain {
+        z-index: 3;
+        opacity: 0.035;
+        mix-blend-mode: soft-light;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+      }
+
+      .site-header,
+      .site-footer,
+      .profile { position: fixed; z-index: 4; }
+
+      .site-header {
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        padding: 28px clamp(24px, 3.4vw, 56px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+      }
+
+      .github-link,
+      .motion-toggle,
+      .location,
+      .coordinates,
+      .path,
+      .role {
+        font-family: var(--mono);
+        text-transform: uppercase;
+      }
+
+      .github-link,
+      .motion-toggle {
+        position: relative;
+        padding: 7px 0;
+        border: 0;
+        background: none;
+        color: rgba(210, 231, 227, 0.66);
+        font-size: 9px;
+        line-height: 1;
+        letter-spacing: 0.16em;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 180ms ease;
+      }
+
+      .github-link::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        background: var(--teal);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 220ms ease;
+      }
+
+      .github-link:hover,
+      .motion-toggle:hover { color: var(--paper); }
+      .github-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+      .github-link .arrow { margin-left: 7px; color: var(--teal); }
+
+      .motion-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(145, 170, 167, 0.64);
+      }
+
+      .motion-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 2px;
+        width: 8px;
+        height: 8px;
+      }
+
+      .motion-icon::before,
+      .motion-icon::after {
+        content: "";
+        width: 1px;
+        height: 7px;
+        background: var(--teal);
+      }
+
+      .motion-toggle[aria-pressed="false"] .motion-icon::before {
+        width: 0;
+        height: 0;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 6px solid var(--teal);
+        background: transparent;
+      }
+
+      .motion-toggle[aria-pressed="false"] .motion-icon::after { display: none; }
+
+      .github-link:focus-visible,
+      .motion-toggle:focus-visible {
+        outline: 1px solid var(--teal);
+        outline-offset: 6px;
+      }
+
+      .profile {
+        left: clamp(24px, 6vw, 96px);
+        top: 49%;
+        width: min(62vw, 780px);
+        transform: translateY(-50%);
+      }
+
+      .path {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 22px;
+        color: var(--teal);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.14em;
+      }
+
+      .path::before {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: rgba(47, 224, 192, 0.58);
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--paper);
+        font-size: clamp(2.7rem, 5.6vw, 6rem);
+        font-weight: 300;
+        line-height: 0.98;
+        letter-spacing: 0.065em;
+        white-space: nowrap;
+        text-shadow: 0 2px 30px rgba(6, 13, 15, 0.4);
+      }
+
+      .role {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        margin: 20px 0 0;
+        color: rgba(185, 210, 205, 0.8);
+        font-size: clamp(8px, 0.82vw, 11px);
+        letter-spacing: 0.17em;
+        line-height: 1.6;
+      }
+
+      .role .dot { color: var(--coral); font-size: 12px; }
+
+      .manifesto {
+        margin: 26px 0 0;
+        color: rgba(209, 226, 222, 0.67);
+        font-family: var(--serif);
+        font-size: clamp(14px, 1.25vw, 18px);
+        font-style: italic;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: 0.012em;
+      }
+
+      .site-footer {
+        right: clamp(24px, 3.4vw, 56px);
+        bottom: 27px;
+        left: clamp(24px, 3.4vw, 56px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .location,
+      .coordinates {
+        margin: 0;
+        color: rgba(159, 184, 179, 0.62);
+        font-size: 8px;
+        line-height: 1.5;
+        letter-spacing: 0.17em;
+      }
+
+      .location { display: flex; align-items: center; gap: 9px; }
+
+      .location-mark {
+        width: 4px;
+        height: 4px;
+        border: 1px solid var(--coral);
+        transform: rotate(45deg);
+      }
+
+      .location .slash { color: rgba(47, 224, 192, 0.45); }
+      .coordinates { color: rgba(137, 162, 158, 0.38); }
+
+      .capture .chrome { display: none !important; }
+
+      .capture .profile {
+        left: clamp(40px, 4.6vw, 64px);
+        top: 47%;
+        width: 58vw;
+      }
+
+      .capture .path { margin-bottom: 13px; font-size: 9px; }
+      .capture h1 { font-size: clamp(38px, 4vw, 54px); letter-spacing: 0.06em; }
+      .capture .role { margin-top: 13px; font-size: 9px; }
+      .capture .manifesto { margin-top: 15px; font-size: 14px; line-height: 1.45; }
+      .capture .site-footer { bottom: 17px; left: clamp(40px, 4.6vw, 64px); }
+      .capture .location { font-size: 7px; }
+
+      .webgl-failed .motion-toggle { display: none; }
+
+      @media (max-width: 700px) {
+        .vignette {
+          background:
+            linear-gradient(90deg, rgba(6, 13, 15, 0.76), rgba(6, 13, 15, 0.28)),
+            linear-gradient(0deg, rgba(6, 13, 15, 0.88) 0%, rgba(6, 13, 15, 0.3) 45%, rgba(6, 13, 15, 0.36) 100%);
+        }
+
+        .profile {
+          top: 54%;
+          width: calc(100vw - 48px);
+        }
+
+        h1 { font-size: clamp(1.65rem, 7.9vw, 3.4rem); letter-spacing: 0.045em; }
+        .path { margin-bottom: 18px; }
+        .role { flex-wrap: wrap; gap: 7px; max-width: 300px; margin-top: 16px; }
+        .manifesto { margin-top: 21px; }
+        .coordinates { display: none; }
+        .fallback-core { left: 64%; top: 32%; }
+        .fallback-ribbon { left: 4%; top: 34%; width: 120%; }
+        .fallback-ribbon:nth-child(2) { top: 30%; }
+        .fallback-ribbon:nth-child(3) { top: 38%; }
+      }
+
+      @media (max-height: 480px) and (min-width: 701px) {
+        .site-header { padding-top: 16px; padding-bottom: 16px; }
+        .site-footer { bottom: 15px; }
+        .profile { top: 48%; }
+        .path { margin-bottom: 12px; }
+        .role { margin-top: 12px; }
+        .manifesto { margin-top: 14px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { transition-duration: 0.01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fallback-art" aria-hidden="true">
+      <span class="fallback-ribbon"></span>
+      <span class="fallback-ribbon"></span>
+      <span class="fallback-ribbon"></span>
+      <span class="fallback-core"></span>
+    </div>
+    <div id="scene" class="scene" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header chrome">
+      <nav class="nav" aria-label="Profile controls">
+        <a class="github-link" href="https://github.com/googlesky" rel="me" aria-label="Freedom Windss on GitHub">
+          github / googlesky <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="true" aria-label="Pause animation">
+          <span class="motion-icon" aria-hidden="true"></span>
+          <span class="motion-label">Motion</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="profile">
+      <p class="path">~/freedom-windss</p>
+      <h1>FREEDOM WINDSS</h1>
+      <p class="role">DEVOPS / SRE <span class="dot" aria-hidden="true">·</span> SECURITY RESEARCHER</p>
+      <p class="manifesto">Resilient infrastructure. Reproducible research.<br>Useful open source.</p>
+    </main>
+
+    <footer class="site-footer">
+      <p class="location">
+        <span class="location-mark" aria-hidden="true"></span>
+        Ho Chi Minh City <span class="slash">/</span> remote
+      </p>
+      <p class="coordinates chrome">10.8231° N&nbsp;&nbsp; / &nbsp;&nbsp;106.6297° E</p>
+    </footer>
+
+    <script type="module" src="./art.js"></script>
+  </body>
+</html>

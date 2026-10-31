@@ -1,0 +1,10 @@
+.opencode/
+TRACKING.md
+.env
+.env.*
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+node_modules/
+.DS_Store
