@@ -35,12 +35,12 @@ The lists below are generated from my public GitHub repositories — new project
 
 | Project | Description |
 | --- | --- |
+| [CVE-2026-115290](https://github.com/googlesky/CVE-2026-115290) | PoC for CVE-2026-115290 (Elasticsearch unauthenticated DoS via remote cluster server, CWE-674, ESA-2026-201) — fully containerized A/B lab (8.19.23 vs 8.19.24) |
 | [CVE-2026-98432](https://github.com/googlesky/CVE-2026-98432) | PoC for CVE-2026-98432 (Linux kernel IPv4 TCP inet_opt/ireq_opt use-after-free, CVSS 9.8): KASAN-verified UAF reproduction in inet_csk_route_req with A/B fixed-kernel control |
 | [CVE-2026-111585](https://github.com/googlesky/CVE-2026-111585) | CVE-2026-111585 — TeamViewer Remote-Control Screen Decompression Integer Overflow → Heap Buffer Overflow (PoC, fixed in 15.83, CVSS 8.8). Containerized lab + one-command repro with vulnerable/fixed differential evidence. |
 | [CVE-2026-100105](https://github.com/googlesky/CVE-2026-100105) | Grafana alerting contact point authorization bypass via schema downgrade (CVSS 7.7) — containerized lab, full PoC, plus 2 unreported findings reproducible on 13.2.5 |
 | [CVE-2026-116244](https://github.com/googlesky/CVE-2026-116244) | pgAdmin 4 server mode: libpq answers GSSAPI with the service account's Kerberos credentials (CVE-2026-116244, fixed in v9.19) — containerized lab + PoC |
 | [CVE-2026-116366](https://github.com/googlesky/CVE-2026-116366) | PoC for CVE-2026-116366 — ClickHouse Server unauthenticated RCE (brotli v1.2.0 decoder out-of-bounds write): differential detector, weaponized DoS, containerized vulnerable-vs-fixed lab, root-cause analysis |
-| [CVE-2026-104623](https://github.com/googlesky/CVE-2026-104623) | PoC and Docker lab for CVE-2026-104623 — SUSE Rancher Manager local-cluster-shell authorization bypass: any authenticated user spawns a shell pod on the management cluster via alternate request forms that dodge the authorization gate.… |
 
 ### Open source & community
 
