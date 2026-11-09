@@ -35,12 +35,12 @@ The lists below are generated from my public GitHub repositories — new project
 
 | Project | Description |
 | --- | --- |
+| [CVE-2026-99273](https://github.com/googlesky/CVE-2026-99273) | PoC and containerized lab for CVE-2026-99273 — Linux ksmbd writes a UTF-16 terminator 2 bytes past a 448-byte response buffer in get_file_stream_info() (SMB2 QUERY_INFO FileStreamInformation): exact-fill stream entry and trailing ::$DATA… |
+| [CVE-2026-121265](https://github.com/googlesky/CVE-2026-121265) | PoC for CVE-2026-121265 (SQL::Abstract &lt; 2.000003 arrayref SQL injection, CWE-89): INSERT/UPDATE exfiltration, privilege escalation and generate()/AUTOLOAD vectors, validated in a containerized version matrix incl. the array_datatypes=0… |
 | [CVE-2026-114550](https://github.com/googlesky/CVE-2026-114550) | CVE-2026-114550 / ZDI-CAN-31039: libwebsockets MQTT PUBACK OOB write PoC lab (podman) |
 | [CVE-2026-115290](https://github.com/googlesky/CVE-2026-115290) | PoC for CVE-2026-115290 (Elasticsearch unauthenticated DoS via the remote cluster server port, CWE-674, ESA-2026-201): validated node kill in a containerized A/B lab (8.19.23 vs 8.19.24) |
 | [CVE-2026-98432](https://github.com/googlesky/CVE-2026-98432) | PoC for CVE-2026-98432 (Linux kernel IPv4 TCP inet_opt/ireq_opt use-after-free, CVSS 9.8): KASAN-verified UAF reproduction in inet_csk_route_req with A/B fixed-kernel control |
 | [CVE-2026-111585](https://github.com/googlesky/CVE-2026-111585) | CVE-2026-111585 — TeamViewer Remote-Control Screen Decompression Integer Overflow → Heap Buffer Overflow (PoC, fixed in 15.83, CVSS 8.8). Containerized lab + one-command repro with vulnerable/fixed differential evidence. |
-| [CVE-2026-100105](https://github.com/googlesky/CVE-2026-100105) | Grafana alerting contact point authorization bypass via schema downgrade (CVSS 7.7) — containerized lab, full PoC, plus 2 unreported findings reproducible on 13.2.5 |
-| [CVE-2026-116244](https://github.com/googlesky/CVE-2026-116244) | pgAdmin 4 server mode: libpq answers GSSAPI with the service account's Kerberos credentials (CVE-2026-116244, fixed in v9.19) — containerized lab + PoC |
 
 ### Open source & community
 
