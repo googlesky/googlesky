@@ -35,7 +35,7 @@ The lists below are generated from my public GitHub repositories — new project
 
 | Project | Description |
 | --- | --- |
-| [CVE-2026-124079](https://github.com/googlesky/CVE-2026-124079) | PoC for CVE-2026-124079 — rConfig Core &lt;=8.2.18 / Pro &lt;8.4.1 unauthenticated RCE via Redis-backed Laravel Horizon queue poisoning (CWE-502); containerised differential lab (8.2.17 / 8.2.18 / 8.2.19) + full-chain PoC |
+| [CVE-2026-124079](https://github.com/googlesky/CVE-2026-124079) | PoC for CVE-2026-124079 — unauthenticated RCE in rConfig Core &lt;=8.2.18 / Pro &lt;8.4.1 via Redis-backed Laravel Horizon queue poisoning (CWE-502). Includes a differential environment (8.2.17 vulnerable / 8.2.18 partially patched / 8.2.19… |
 | [CVE-2026-118383](https://github.com/googlesky/CVE-2026-118383) | PoC for CVE-2026-118383 — MongoDB unauthenticated use-after-free in ReplicationCoordinatorImpl::CatchupState during primary catch-up via readConcern.afterOpTime waiter poisoning, with deterministic crash oracle and fixed-version control. |
 | [CVE-2026-105437](https://github.com/googlesky/CVE-2026-105437) | PoC for CVE-2026-105437 — Git's three-way merge (xdiff/xmerge.c) sizes the merge output buffer in a 32-bit int, so a committed conflict-marker-size gitattribute plus many conflicts overflows it and the merge is written past an undersized… |
 | [CVE-2026-86829](https://github.com/googlesky/CVE-2026-86829) | Apache Airflow &lt; 3.4.0: scheduler-side deserialization of task-controlled XCom (CVE-2026-86829) leading to code execution in the scheduler process. PoC, fixed-version control, and a triggerer classpath validation-order finding. |
