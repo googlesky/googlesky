@@ -35,12 +35,12 @@ The lists below are generated from my public GitHub repositories — new project
 
 | Project | Description |
 | --- | --- |
+| [CVE-2026-110697](https://github.com/googlesky/CVE-2026-110697) | Proof-of-concept and containerized differential lab for CVE-2026-110697: Red Hat Quay builds robot-listing SQL LIKE patterns from the caller's namespace without escaping wildcards, so an underscore namespace returns other tenants' robot… |
+| [CVE-2026-107360](https://github.com/googlesky/CVE-2026-107360) | rubygem-safemode evaluates compound assignments in sandboxed Foreman/Satellite templates without Jail allow-list mediation: a template author invokes arbitrary no-arg methods on template objects (host deletion) and reads non-allow-listed… |
+| [CVE-2026-123039](https://github.com/googlesky/CVE-2026-123039) | Containerised PoC for CVE-2026-123039: the Check Point Gaia OS Dynamic CLI daemon publishes /tmp/dynamic_socket world-writable and authenticates no caller, so any local user escalates to root. Differential lab (affected vs patched), 4-mode… |
 | [CVE-2026-121653](https://github.com/googlesky/CVE-2026-121653) | Containerised PoC for CVE-2026-121653: unauthenticated SQL injection (CWE-89) in the Ivanti Endpoint Manager Core status-event service leads to RCE through the Core database account. A model of /WSStatusEvents runs on real Microsoft SQL… |
 | [CVE-2026-119618](https://github.com/googlesky/CVE-2026-119618) | Apache httpd mod_http2 (2.4.55-2.4.70) races on the connection allocator when assign_headers() writes the synthesised Content-Length: 0 into the shared stream table, corrupting the child heap. Containerised lab, stdlib HTTP/2 PoC, ASan and… |
 | [CVE-2026-119958](https://github.com/googlesky/CVE-2026-119958) | Containerised proof of concept for CVE-2026-119958, the Windows LDAP remote code execution vulnerability of the November 2026 Microsoft security update (CWE-787, CVSS 9.8). Differential lab with vulnerable and patched models, a wire-level… |
-| [CVE-2026-126170](https://github.com/googlesky/CVE-2026-126170) | Containerised PoC for CVE-2026-126170 (Fortinet FG-IR-26-219): a JSON injection (CWE-116) in the FortiManager/FortiAnalyzer JRPC API lets an unauthenticated crafted request reach command execution and injects keys into the response… |
-| [CVE-2026-126148](https://github.com/googlesky/CVE-2026-126148) | Containerised PoC for CVE-2026-126148 (Fortinet FG-IR-26-200): an OS command injection (CWE-78) in the FortiMail HA cluster lets one unauthenticated join-request packet reach command execution as root. Differential 8.0.1 vs 8.0.2, plus a… |
-| [CVE-2026-126147](https://github.com/googlesky/CVE-2026-126147) | Containerised PoC for CVE-2026-126147 (Fortinet FG-IR-26-199): a path traversal (CWE-22) in the FortiMail management interface API lets an unauthenticated request write outside the restricted directory and reach code execution as root.… |
 
 ### Open source & community
 
