@@ -35,12 +35,12 @@ The lists below are generated from my public GitHub repositories — new project
 
 | Project | Description |
 | --- | --- |
+| [CVE-2026-126837](https://github.com/googlesky/CVE-2026-126837) | Containerized differential lab and PoC for CVE-2026-126837: MongoDB Node.js driver 3.3.3-7.7.x validates SRV targets with an uncanonicalized endsWith, so '#', '?' or '/' in an SRV target redirects mongodb+srv clients to an attacker host,… |
 | [CVE-2026-110697](https://github.com/googlesky/CVE-2026-110697) | Proof-of-concept and containerized differential lab for CVE-2026-110697: Red Hat Quay builds robot-listing SQL LIKE patterns from the caller's namespace without escaping wildcards, so an underscore namespace returns other tenants' robot… |
 | [CVE-2026-107360](https://github.com/googlesky/CVE-2026-107360) | rubygem-safemode evaluates compound assignments in sandboxed Foreman/Satellite templates without Jail allow-list mediation: a template author invokes arbitrary no-arg methods on template objects (host deletion) and reads non-allow-listed… |
 | [CVE-2026-123039](https://github.com/googlesky/CVE-2026-123039) | Containerised PoC for CVE-2026-123039: the Check Point Gaia OS Dynamic CLI daemon publishes /tmp/dynamic_socket world-writable and authenticates no caller, so any local user escalates to root. Differential lab (affected vs patched), 4-mode… |
 | [CVE-2026-121653](https://github.com/googlesky/CVE-2026-121653) | Containerised PoC for CVE-2026-121653: unauthenticated SQL injection (CWE-89) in the Ivanti Endpoint Manager Core status-event service leads to RCE through the Core database account. A model of /WSStatusEvents runs on real Microsoft SQL… |
 | [CVE-2026-119618](https://github.com/googlesky/CVE-2026-119618) | Apache httpd mod_http2 (2.4.55-2.4.70) races on the connection allocator when assign_headers() writes the synthesised Content-Length: 0 into the shared stream table, corrupting the child heap. Containerised lab, stdlib HTTP/2 PoC, ASan and… |
-| [CVE-2026-119958](https://github.com/googlesky/CVE-2026-119958) | Containerised proof of concept for CVE-2026-119958, the Windows LDAP remote code execution vulnerability of the November 2026 Microsoft security update (CWE-787, CVSS 9.8). Differential lab with vulnerable and patched models, a wire-level… |
 
 ### Open source & community
 
