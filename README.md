@@ -35,12 +35,12 @@ The lists below are generated from my public GitHub repositories — new project
 
 | Project | Description |
 | --- | --- |
+| [CVE-2026-110486](https://github.com/googlesky/CVE-2026-110486) | Mosquitto 2.1-2.1.2: net__read_ws returns 4 for a zero-length WebSocket data frame without writing payload, so the MQTT parser reads uninitialised heap bytes in CONNECT before auth. ASan differential of real broker 2.1.2 vs vendor-fixed… |
+| [CVE-2026-73504](https://github.com/googlesky/CVE-2026-73504) | cassandra-jdbc-wrapper &lt;4.16.4: DriverUtil redaction helpers added for password logging only redact TAG_PASSWORD — the live Astra auth token stays in SessionHolder DEBUG log strings. Real upstream artifacts 4.16.3 vs 4.16.4: token leaked… |
+| [CVE-2026-132252](https://github.com/googlesky/CVE-2026-132252) | October CMS &lt;=4.4.6: validateExternalImageHost trusts DNS for numeric-looking hosts while libc parses octal/decimal as 127.0.0.1 at fetch time — an external image URL reaches loopback services. Advisory is one line; fix visible in the… |
+| [CVE-2026-130587](https://github.com/googlesky/CVE-2026-130587) | OpenFunction &lt;=1.2.0: Serving.spec.template is a tenant-supplied PodSpec copied verbatim into operator workloads — a tenant with only create-Serving rights gets privileged host-namespace pods mounting the node root. Go driver against the… |
+| [CVE-2026-131873](https://github.com/googlesky/CVE-2026-131873) | Gargoyle 2023.1-2026.1.1: Plus interpreter ReadAction() writes into a 1024-entry stack conditions array with no bounds check — an unterminated chain in a crafted/truncated .plus file crashes the player. ASan+UBSan differential: stack-… |
 | [CVE-2026-131852](https://github.com/googlesky/CVE-2026-131852) | OwnTracks Recorder &lt; 1.0.5: json_response() passes attacker JSON as the printf format of mg_printf_data — a stored location tid with %p leaks live pointers via GET /api/0/last and %n crashes the daemon (rc=139) into a storage crash-loop.… |
-| [CVE-2026-131842](https://github.com/googlesky/CVE-2026-131842) | Poppler pdfdetach 24.03.0-26.11.0: containment guard is a string-prefix check (starts_with after lexically_normal) — a crafted embedded file name like ../quarantine-staging/x writes outside the output dir, and symlinks defeat it. Lab:… |
-| [CVE-2026-130347](https://github.com/googlesky/CVE-2026-130347) | phpMyFAQ &lt; 4.1.12: the public password-reset flow never checks auth_source — IdP provisioning leaves a random local hash, so anyone who reads the reset mail sets a local password on an OIDC/LDAP/WebAuthn account and logs in, skipping the… |
-| [CVE-2026-130354](https://github.com/googlesky/CVE-2026-130354) | phpMyFAQ 4.1.0-4.1.11: POST /api/webauthn/prepare creates accounts ACTIVE — bypassing spam.manualActivation and the registration domain whitelist. Anonymous visitors get ready registered accounts. Real 4.1.11 vs vendor-fixed 4.1.12 with… |
-| [CVE-2026-130335](https://github.com/googlesky/CVE-2026-130335) | Info-ZIP Zip 3.0/3.1b-c: check_zipfile wraps the archive name in single quotes before system() — a name with ' breaks out and runs commands when a victim runs zip -T. Zip 3.0 + Debian patches without/with the fix (3.0-15 vs 3.0-16);… |
-| [CVE-2026-129491](https://github.com/googlesky/CVE-2026-129491) | forum-java 20f7e68-63152c49: comment content stored verbatim reaches jQuery.html() via data-reply-content when a victim clicks Reply; sid cookie not HttpOnly -&gt; session theft + admin takeover. Real build @63152c49 + seeded MySQL; delivery… |
 
 ### Open source & community
 
