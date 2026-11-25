@@ -35,12 +35,12 @@ The lists below are generated from my public GitHub repositories — new project
 
 | Project | Description |
 | --- | --- |
-| [CVE-2026-133780](https://github.com/googlesky/CVE-2026-133780) | Symfony stimulus-bridge: Stimulus magic comments evaluated with node:vm.runInNewContext — arbitrary code execution at build time. Verbatim VM path from 25f1ff0^ vs literal-only AST parser: marker set on vuln, rejected on fixed |
-| [CVE-2026-30940](https://github.com/googlesky/CVE-2026-30940) | baserCMS 5.2.3 incomplete patch: theme path boundary check skipped when realpath() fails — '../../webroot/webshell.php' accepted for write (RCE). Verbatim PHP guards from c650017^ vs complete fix: traversal on vuln, rejection on fixed |
-| [CVE-2026-115375](https://github.com/googlesky/CVE-2026-115375) | Incus &lt;7.0.2/7.5.0: dependent volume names from a backup index used as path segments without validation — '../escape/pwned' creates a volume outside the pool. Verbatim IsAPIName guards from f7b57f4^ vs fix: traversal path on vuln,… |
-| [CVE-2026-129975](https://github.com/googlesky/CVE-2026-129975) | GPGME &lt;2.3.1: realloced status buffer assigned to context only at end of reader — crafted long user ID returns early leaving stale pointer, double free at cleanup. Verbatim placement from 14499348^ vs fix with ASan: double-free on vuln,… |
-| [CVE-2026-130453](https://github.com/googlesky/CVE-2026-130453) | Wireshark 4.4.x/4.6.x OpenWire dissector recurses on nested complex types with a NULL tree and no depth bound — stack exhaustion DoS. Verbatim depth guards from 3823253^ vs fix: RecursionError on vuln, depth-limit error on fixed |
-| [CVE-2026-132825](https://github.com/googlesky/CVE-2026-132825) | Ruby2Shell CVE-2026-132825: case_map checks one byte of output room but sharp-s 0xDF expands to two bytes — one-byte heap overflow. Verbatim loop guard from d582f8f^ vs fix with ASan: OOB write on vuln, safe on fixed |
+| [CVE-2026-135472](https://github.com/googlesky/CVE-2026-135472) | open62541 1.5.0-1.5.10: lookupRefType shallow-copies a string NodeId then frees results — UAF/double free. ASan differential: heap-use-after-free on vuln, clean read on fixed |
+| [CVE-2026-107784](https://github.com/googlesky/CVE-2026-107784) | CPython before e4c751b: Windows tarfile extraction filters accept drive-relative names like C:foo — writes escape destination. Verbatim splitdrive guard: extracted on vuln, AbsolutePathError on fixed |
+| [CVE-2026-129830](https://github.com/googlesky/CVE-2026-129830) | rsyslog before fc9a1e9: short timestamp rewrite left imuxsock TAG cursor ahead of remaining length — OOB read. ASan differential: heap-buffer-overflow on vuln, consistent cursor on fixed |
+| [CVE-2026-136139](https://github.com/googlesky/CVE-2026-136139) | R-KV before 0fdff6e: untrusted safetensors index shard names joined to model dir — path traversal. Verbatim bare-name guard: escape on vuln, ValueError on fixed |
+| [CVE-2026-135817](https://github.com/googlesky/CVE-2026-135817) | AiSOC before 8f22242: audit middleware labeled rows with unverified Bearer token claims — unauthenticated caller forges audit attribution. Verbatim principal guard: victim-admin audited on vuln, ignored on fixed |
+| [CVE-2026-16668](https://github.com/googlesky/CVE-2026-16668) | MCUboot before 1b9d870: vendored zcbor_any_skip recurses through nested CBOR without a bound — stack exhaustion. Verbatim depth guard: RecursionError on vuln, ZCBOR_ERR_MAX_DEPTH on fixed |
 
 ### Open source & community
 
