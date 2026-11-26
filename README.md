@@ -35,12 +35,12 @@ The lists below are generated from my public GitHub repositories — new project
 
 | Project | Description |
 | --- | --- |
-| [CVE-2026-135472](https://github.com/googlesky/CVE-2026-135472) | open62541 1.5.0-1.5.10: lookupRefType shallow-copies a string NodeId then frees results — UAF/double free. ASan differential: heap-use-after-free on vuln, clean read on fixed |
-| [CVE-2026-107784](https://github.com/googlesky/CVE-2026-107784) | CPython before e4c751b: Windows tarfile extraction filters accept drive-relative names like C:foo — writes escape destination. Verbatim splitdrive guard: extracted on vuln, AbsolutePathError on fixed |
-| [CVE-2026-129830](https://github.com/googlesky/CVE-2026-129830) | rsyslog before fc9a1e9: short timestamp rewrite left imuxsock TAG cursor ahead of remaining length — OOB read. ASan differential: heap-buffer-overflow on vuln, consistent cursor on fixed |
-| [CVE-2026-136139](https://github.com/googlesky/CVE-2026-136139) | R-KV before 0fdff6e: untrusted safetensors index shard names joined to model dir — path traversal. Verbatim bare-name guard: escape on vuln, ValueError on fixed |
-| [CVE-2026-135817](https://github.com/googlesky/CVE-2026-135817) | AiSOC before 8f22242: audit middleware labeled rows with unverified Bearer token claims — unauthenticated caller forges audit attribution. Verbatim principal guard: victim-admin audited on vuln, ignored on fixed |
-| [CVE-2026-16668](https://github.com/googlesky/CVE-2026-16668) | MCUboot before 1b9d870: vendored zcbor_any_skip recurses through nested CBOR without a bound — stack exhaustion. Verbatim depth guard: RecursionError on vuln, ZCBOR_ERR_MAX_DEPTH on fixed |
+| [CVE-2026-133210](https://github.com/googlesky/CVE-2026-133210) | Revive Adserver through 6.0.9: includebanner array keys are concatenated unquoted into a banner-lookup SQL query — blind SQL injection by a zone-linking user. No public fix commit; derived guard from lab: injected on vuln, rejected on guard |
+| [CVE-2026-133204](https://github.com/googlesky/CVE-2026-133204) | Revive Adserver through 6.0.9: zone-linking selection lists are not restricted to the zone's agency — another agency's campaign and banner names are disclosed. No public fix commit; derived guard from lab: disclosed on vuln, rejected on… |
+| [CVE-2026-133202](https://github.com/googlesky/CVE-2026-133202) | Revive Adserver through 6.0.9: manager links a tracker owned by one advertiser to a campaign owned by another — per-object access checks miss the relationship. No public fix commit; derived guard from lab: linked on vuln, rejected on guard |
+| [CVE-2026-133206](https://github.com/googlesky/CVE-2026-133206) | Revive Adserver through 6.0.9: unescaped advertiser creative fields inject XML elements into VAST responses — attacker controls tracking elements served to publishers. No public fix commit; derived guard from lab: injected on vuln,… |
+| [CVE-2026-133207](https://github.com/googlesky/CVE-2026-133207) | Revive Adserver through 6.0.9: entity name exported verbatim into an XLS cell — spreadsheet evaluates attacker formula when another user opens the report. No public fix commit; derived guard from lab: formula on vuln, text-prefixed on guard |
+| [CVE-2026-133205](https://github.com/googlesky/CVE-2026-133205) | Revive Adserver through 6.0.9: XLS report accepts another agency's entity id as scope — victim name leaks into the header. No public fix commit; derived guard from lab: leaked on vuln, rejected on guard |
 
 ### Open source & community
 
