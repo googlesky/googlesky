@@ -35,12 +35,12 @@ The lists below are generated from my public GitHub repositories — new project
 
 | Project | Description |
 | --- | --- |
-| [CVE-2026-133210](https://github.com/googlesky/CVE-2026-133210) | Revive Adserver through 6.0.9: includebanner array keys are concatenated unquoted into a banner-lookup SQL query — blind SQL injection by a zone-linking user. No public fix commit; derived guard from lab: injected on vuln, rejected on guard |
-| [CVE-2026-133204](https://github.com/googlesky/CVE-2026-133204) | Revive Adserver through 6.0.9: zone-linking selection lists are not restricted to the zone's agency — another agency's campaign and banner names are disclosed. No public fix commit; derived guard from lab: disclosed on vuln, rejected on… |
-| [CVE-2026-133202](https://github.com/googlesky/CVE-2026-133202) | Revive Adserver through 6.0.9: manager links a tracker owned by one advertiser to a campaign owned by another — per-object access checks miss the relationship. No public fix commit; derived guard from lab: linked on vuln, rejected on guard |
-| [CVE-2026-133206](https://github.com/googlesky/CVE-2026-133206) | Revive Adserver through 6.0.9: unescaped advertiser creative fields inject XML elements into VAST responses — attacker controls tracking elements served to publishers. No public fix commit; derived guard from lab: injected on vuln,… |
-| [CVE-2026-133207](https://github.com/googlesky/CVE-2026-133207) | Revive Adserver through 6.0.9: entity name exported verbatim into an XLS cell — spreadsheet evaluates attacker formula when another user opens the report. No public fix commit; derived guard from lab: formula on vuln, text-prefixed on guard |
-| [CVE-2026-133205](https://github.com/googlesky/CVE-2026-133205) | Revive Adserver through 6.0.9: XLS report accepts another agency's entity id as scope — victim name leaks into the header. No public fix commit; derived guard from lab: leaked on vuln, rejected on guard |
+| [CVE-2026-93479](https://github.com/googlesky/CVE-2026-93479) | NGINX 1.30.0-1.30.5 heap buffer overflow in script evaluation: a lazy regex map rewrites a capture after measurement, so root consumes the reserved URI space and the append overflows the heap. ASan differential: vulnerable worker aborts,… |
+| [CVE-2023-38831](https://github.com/googlesky/CVE-2023-38831) | WinRAR duplicate-name folder trick executes a hidden script. Fixed in 6.23. Differential: script extracted on vuln, archive refused on fixed |
+| [CVE-2022-29464](https://github.com/googlesky/CVE-2022-29464) | WSO2 unrestricted file upload with traversal writes a WAR under the web root. Fixed in April 2022 hotfix. Differential: WAR uploaded on vuln, refused on fixed |
+| [CVE-2021-21985](https://github.com/googlesky/CVE-2021-21985) | vCenter vSphere Client VSAN health plugin RCE. Fixed in 6.5 U3n/6.7 U3m/7.0 U2c. Differential: expression executed on vuln, refused on fixed |
+| [CVE-2022-22954](https://github.com/googlesky/CVE-2022-22954) | VMware Workspace ONE server-side template injection RCE. Fixed in April 2022 patch. Differential: expression evaluated on vuln, refused on fixed |
+| [CVE-2023-3519](https://github.com/googlesky/CVE-2023-3519) | Citrix NetScaler unauthenticated code injection RCE. Fixed in July 2023 update. Differential: expression injected on vuln, refused on fixed |
 
 ### Open source & community
 
